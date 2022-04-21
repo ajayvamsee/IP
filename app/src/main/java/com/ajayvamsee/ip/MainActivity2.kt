@@ -1,9 +1,5 @@
 package com.ajayvamsee.ip
 
-import android.net.ConnectivityManager
-import android.net.Network
-import android.net.NetworkCapabilities
-import android.net.NetworkRequest
 import android.net.wifi.WifiManager
 import android.os.Bundle
 import android.text.format.Formatter
@@ -29,29 +25,6 @@ class MainActivity2 : AppCompatActivity() {
 
         val dotNotation = InetAddress.getByAddress(buffer).hostAddress
         Log.d("aaa", "Your Device IP Address: $dotNotation")
-
-
-       /* val networkRequest = NetworkRequest.Builder()
-            .addCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
-            .addTransportType(NetworkCapabilities.TRANSPORT_WIFI)
-            .addTransportType(NetworkCapabilities.TRANSPORT_CELLULAR)
-            .build()
-
-        val networkCallback = object : ConnectivityManager.NetworkCallback() {
-            override fun onAvailable(network: Network) {
-                super.onAvailable(network)
-            }
-
-
-            override fun onLost(network: Network) {
-                super.onLost(network)
-            }
-
-            override fun onCapabilitiesChanged(network: Network,networkCapabilities: NetworkCapabilities) {
-                super.onCapabilitiesChanged(network, networkCapabilities)
-            }
-        }*/
-
 
         findViewById<TextView>(R.id.getIPAddress).text = "Your device Ip Address -$dotNotation"
     }
